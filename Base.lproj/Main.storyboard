@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEMP ℉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwA-fY-esu">
+                                <rect key="frame" x="143" y="122.5" width="128.5" height="41.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRY-jM-H0h">
+                                <rect key="frame" x="-13" y="547" width="414" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vt7-Jr-eu2" id="yVN-Fk-39P"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Bin-ox-L2Y"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gRY-jM-H0h" secondAttribute="trailing" constant="-7" id="52h-EU-8IP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LwA-fY-esu" secondAttribute="bottom" constant="572" id="Osz-xP-gzh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gRY-jM-H0h" secondAttribute="bottom" constant="-27" id="Pqp-Pq-f4M"/>
+                            <constraint firstItem="LwA-fY-esu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VyA-Wz-5YR"/>
+                            <constraint firstItem="gRY-jM-H0h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-33" id="pYx-hP-guI"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="736"/>
+                    <connections>
+                        <outlet property="TempPicker" destination="gRY-jM-H0h" id="DwD-yg-sVa"/>
+                        <outlet property="TempRange" destination="Vt7-Jr-eu2" id="C8D-eS-C21"/>
+                        <outlet property="TemperatureLabel" destination="LwA-fY-esu" id="T7E-AS-UJE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="Vt7-Jr-eu2" customClass="TemperatureRange" customModule="Converter" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="137.6311844077961"/>
+        </scene>
+    </scenes>
+</document>
